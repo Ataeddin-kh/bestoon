@@ -13,7 +13,7 @@ def submit_expense(request):
     this_token=request.POST.get('token')
     this_user=User.objects.filter(token__token=this_token).get()
     Expense.objects.Create(user=this_user,text=request.POST.get('text'),
-    amount=request.POST["amount"],date=now)
+    amount=request.POST.get("amount"),date=now)
 
 
 
